@@ -58,6 +58,13 @@ predict(model1, target, interval=c("confidence"))
 
 The confidence interval goes from 0.59 to 1.
 
+```{r}
+armmod <- lm(SIMS~ARM, data=data)
+plot(SIMS~ARM, data=data)
+abline(armmod)
+summary.lm(armmod)
+```
+
 ### Model2 SIMS~GRIP
 ```{r}
 basiccNN2 <- ggplot(data,aes(y=SIMS,x=GRIP))
@@ -80,4 +87,13 @@ The correlation between SIMS and ARM in 0.69, while the correlation between SIMS
 ```{r}
 model1 <- lm(SIMS~GRIP, data=data)
 summary.lm(model1)
+```
+
+The adjusted R-squared value is 0.405, this is smaller than the SIMS vs ARM which was 0.471 and the p-value is very small.
+
+```{r}
+gripmod <- lm(SIMS~GRIP, data=data)
+plot(SIMS~GRIP, data=data)
+abline(gripmod)
+summary.lm(gripmod)
 ```
