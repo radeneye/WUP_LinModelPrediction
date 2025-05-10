@@ -85,8 +85,8 @@ The correlation between SIMS and ARM in 0.69, while the correlation between SIMS
 
 ### Inferential Results 2
 ```{r}
-model1 <- lm(SIMS~GRIP, data=data)
-summary.lm(model1)
+model2 <- lm(SIMS~GRIP, data=data)
+summary.lm(model2)
 ```
 
 The adjusted R-squared value is 0.405, this is smaller than the SIMS vs ARM which was 0.471 and the p-value is very small.
@@ -126,3 +126,20 @@ predict(model3,target,interval=c("confidence"))
 ```
 
 The prediction interval for model3 is -2.2 to 2.4.The confidence interval is -0.23  to 0.48. 
+
+### ANOVA test for model1 and model3 
+```{r}
+anova(model1,model3)
+```
+
+```{r}
+anova(model2,model3)
+```
+
+
+```{r}
+anova(model1,model2)
+```
+
+Both Model1 and Model2 are nested with Model3. We can compare this by using an ANOVA test, as we get our results, we can see that we have low p values. If both models are not nested, then we cannot use the ANOVA test. 
+
