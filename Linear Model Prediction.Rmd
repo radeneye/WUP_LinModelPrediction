@@ -97,3 +97,13 @@ plot(SIMS~GRIP, data=data)
 abline(gripmod)
 summary.lm(gripmod)
 ```
+
+
+### Model3 SIMS~ARM+GRIP
+
+```{r}
+cor(SIMS~ARM,data=data)
+cor(SIMS~GRIP,data=data)
+cor(SIMS~ARM+GRIP,data=data)
+```
+Our correlation between SIMS and ARM/GRIP is 0.73.
