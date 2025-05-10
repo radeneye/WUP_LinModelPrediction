@@ -127,7 +127,7 @@ predict(model3,target,interval=c("confidence"))
 
 The prediction interval for model3 is -2.2 to 2.4.The confidence interval is -0.23  to 0.48. 
 
-### ANOVA test for model1 and model3 
+### ANOVA tests
 ```{r}
 anova(model1,model3)
 ```
