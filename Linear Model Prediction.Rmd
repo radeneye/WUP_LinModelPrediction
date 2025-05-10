@@ -23,4 +23,5 @@ basiccNN <- ggplot(data,aes(y=SIMS,x=ARM))
 ```{r}
 basiccNN + geom_point() + ggtitle("SIMS vs ARM")
 ```
+
 As we can see in the scatter plot for SIMS vs ARM above, we can see that the data is going uphill to the right. This relationship is a positive relationship.
