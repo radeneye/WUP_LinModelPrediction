@@ -25,3 +25,10 @@ basiccNN + geom_point() + ggtitle("SIMS vs ARM")
 ```
 
 As we can see in the scatter plot for SIMS vs ARM above, we can see that the data is going uphill to the right. This relationship is a positive relationship.
+
+### Numerical Results
+```{r}
+cor(SIMS~ARM, data=data)
+```
+
+The correlation between SIMS and ARM is 0.69.
