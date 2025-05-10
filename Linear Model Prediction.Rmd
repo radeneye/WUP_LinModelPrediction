@@ -99,7 +99,7 @@ summary.lm(gripmod)
 ```
 
 
-### Model3 SIMS~ARM+GRIP
+### Model 3 SIMS~ARM+GRIP
 
 ```{r}
 cor(SIMS~ARM,data=data)
@@ -107,3 +107,22 @@ cor(SIMS~GRIP,data=data)
 cor(SIMS~ARM+GRIP,data=data)
 ```
 Our correlation between SIMS and ARM/GRIP is 0.73.
+
+### Inferential results 3 
+
+```{r}
+model3=lm(SIMS~ARM+GRIP,data=data)
+summary.lm(model3)
+```
+
+OUR equation is SIMS = -5.43387 + 0.03731*ARM +0.02447*GRIP. This is the line in 3D space. 
+
+```{r}
+predict(model3,target,interval=c("prediction"))
+```
+
+```{r}
+predict(model3,target,interval=c("confidence"))
+```
+
+The prediction interval for model3 is -2.2 to 2.4.The confidence interval is -0.23  to 0.48. 
