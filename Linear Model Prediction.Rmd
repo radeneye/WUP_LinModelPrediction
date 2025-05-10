@@ -32,3 +32,52 @@ cor(SIMS~ARM, data=data)
 ```
 
 The correlation between SIMS and ARM is 0.69.
+
+### Inferential Results
+```{r}
+model1 <- lm(SIMS~ARM, data=data)
+summary.lm(model1)
+```
+
+Out adjusted R-squared value is 0.467 and our p-value is extremely small.
+
+### Target Dataframe
+```{r}
+target <- data.frame(ARM=90, GRIP=90)
+```
+
+```{r}
+predict(model1, target, interval=c("prediction"))
+```
+
+The prediction interval goes from -1.6 to 3.2.
+
+```{r}
+predict(model1, target, interval=c("confidence"))
+```
+
+The confidence interval goes from 0.59 to 1.
+
+### Model2 SIMS~GRIP
+```{r}
+basiccNN2 <- ggplot(data,aes(y=SIMS,x=GRIP))
+```
+
+```{r}
+basiccNN2 + geom_point() + ggtitle("SIMS vs GRIP")
+```
+
+In this plot as well, we see that the data is going uphill and to the right. This relationship is a positive relationship.
+
+### Numerical Results 2
+```{r}
+cor(SIMS~GRIP, data=data)
+```
+
+The correlation between SIMS and ARM in 0.69, while the correlation between SIMS and ARM is 0.64 so the correlation between SIMS and ARMS is greater. 
+
+### Inferential Results 2
+```{r}
+model1 <- lm(SIMS~GRIP, data=data)
+summary.lm(model1)
+```
